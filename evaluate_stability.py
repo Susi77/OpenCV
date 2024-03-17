@@ -85,7 +85,7 @@ if __name__ == "__main__":
     video_path = "video_test.mp4"
     
     # Manually annotate ground truth bounding boxes for each frame
-    ground_truth_bboxes =  [(50, 50, 50, 50), (60, 60, 55, 55), (50, 50, 55, 55), (60, 50, 55, 60)]
+    ground_truth_bboxes =  [(50, 50, 50, 50), (60, 60, 55, 55), (50, 50, 55, 55)]
 
     # Evaluate tracking performance
     evaluate_stability(video_path, ground_truth_bboxes, interval=100)
