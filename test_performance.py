@@ -62,7 +62,7 @@ def checking_performance(video_path):
         # Draw the bounding box on the frame
         if success:
             x, y, w, h = float_to_int(bbox)  # Extract coordinates, width, and height from the bounding box
-#            # Calculate centroid
+            # Calculate centroid
             centroid_x = x + w // 2
             centroid_y = y + h // 2
             # Draw cross at centroid
@@ -70,7 +70,8 @@ def checking_performance(video_path):
             cv2.line(frame, (centroid_x - cross_size, centroid_y), (centroid_x + cross_size, centroid_y), (0, 0, 255), 1)
             cv2.line(frame, (centroid_x, centroid_y - cross_size), (centroid_x, centroid_y + cross_size), (0, 0, 255), 1)
 
-#            cv2.rectangle(frame, (x, y),(x + w, y + h), (255, 0, 0), 2)
+            #cv2.rectangle(frame, (x, y),(x + w, y + h), (255, 0, 0), 2)
+
         cv2.imshow("Tracking", frame)    
 
 

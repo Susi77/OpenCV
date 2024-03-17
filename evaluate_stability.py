@@ -27,7 +27,7 @@ def calculate_iou(bbox1, bbox2):
     iou = inter_area / float(bbox1_area + bbox2_area - inter_area)
     return iou
 
-def evaluate_stability(video_path, ground_truth_bboxes, interval=100):
+def evaluate_stability(video_path, ground_truth_bboxes, interval=50):
 
     # Open the video capture object
     cap = cv2.VideoCapture(video_path)
@@ -69,7 +69,7 @@ def evaluate_stability(video_path, ground_truth_bboxes, interval=100):
             iou_values.append(iou)
 
         # Check if it's time to evaluate stability
-        if frame_count % interval == 0:
+        if frame_count % interval == 1:
             avg_iou = sum(iou_values) / len(iou_values)
             print(f"Average IoU at frame {frame_count}: {avg_iou}")
 
@@ -85,13 +85,13 @@ if __name__ == "__main__":
     video_path = "video_test.mp4"
     
     # Manually annotate ground truth bounding boxes for each frame
-    ground_truth_bboxes =  [(50, 50, 50, 50), (60, 60, 55, 55), (50, 50, 55, 55)]
+    ground_truth_bboxes = []
+    for i in range(300):
+        start = 331
+        step = int(-2.01*i)
+        ground_truth_bboxes += [(750, start + step, 67, 129)]
+    #print(ground_truth_bboxes)
 
     # Evaluate tracking performance
-    evaluate_stability(video_path, ground_truth_bboxes, interval=100)
-
-
-
-
-
+    evaluate_stability(video_path, ground_truth_bboxes)
 

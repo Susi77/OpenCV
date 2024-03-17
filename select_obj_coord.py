@@ -35,5 +35,5 @@ def select_object(video_path):
 
 # Test the object selection
 if __name__ == "__main__":
-    video_path = "video_test.mp4"  # Replace this with the path to your video file
+    video_path = "video_test.mp4"
     select_object(video_path)
