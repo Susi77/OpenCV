@@ -2,12 +2,12 @@
 
 import cv2
 
-def float_to_int(bbox):
-    x = int(bbox[0])
-    y = int(bbox[1])
-    w = int(bbox[2])
-    h = int(bbox[3])
-    return (x, y, w, h)
+#def float_to_int(bbox):
+#    x = int(bbox[0])
+#    y = int(bbox[1])
+#    w = int(bbox[2])
+#    h = int(bbox[3])
+#    return (x, y, w, h)
 
 def calculate_iou(bbox1, bbox2):
     # Calculate intersection rectangle
